@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mi propósito — Amelilozvel</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-cream: #f6f0e8;
+        --pill: #efe9e2;
+        --muted: #8b7f75;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg-cream);
+      }
+
+      /* Efecto hover para imágenes */
+      .img-hover {
+        transition: transform 0.3s ease;
+      }
+      .img-hover:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased text-gray-900">
+    <!-- Header -->
+    <header class="w-full flex justify-center py-6">
+      <div class="w-full max-w-4xl px-4">
+        <div
+          class="bg-[color:var(--pill)] rounded-full px-6 py-3 flex items-center justify-between shadow-sm ring-1 ring-black/5"
+        >
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="logo.png" alt="logo" class="w-10 h-10 object-contain" />
+          </a>
+
+          <!-- Botón hamburguesa (solo móvil) -->
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Menú principal -->
+          <nav
+            id="menu"
+            class="hidden md:flex flex-col md:flex-row absolute md:static top-20 left-0 w-full md:w-auto bg-[color:var(--pill)] md:bg-transparent md:shadow-none shadow-md md:rounded-none rounded-xl p-5 md:p-0 gap-4 md:gap-8 items-center text-sm font-medium text-[color:var(--black)] z-50"
+          >
+            <a
+              href="index.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Inicio</a
+            >
+            <a
+              href="conoceme.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Conóceme más</a
+            >
+            <a
+              href="proposito.html"
+              class="px-3 py-1 text-[color:var(--muted)] font-semibold"
+              >Mi propósito</a
+            >
+            <a
+              href="galeria.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Galería</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="max-w-4xl mx-auto px-6 pt-10 pb-20">
+      <section
+        class="flex flex-col md:flex-row items-center justify-between gap-10"
+      >
+        <!-- Imagen vertical -->
+        <img
+          src="foto11.png"
+          alt="Imagen vertical"
+          class="w-40 sm:w-52 h-[320px] sm:h-[420px] object-cover rounded-[2rem] img-hover"
+        />
+
+        <!-- Texto -->
+        <div class="text-center md:text-left max-w-xl font-light text-gray-900">
+          <p class="mb-6 text-lg">
+            Vivir con propósito es elegir cada día aquello que te acerca a tu
+            mejor versión.
+          </p>
+          <p class="mb-6 text-sm leading-relaxed">
+            Desde hace años descubrí que cada etapa<br />
+            de mi vida tiene un propósito<br />
+            más grande que solo “hacer”.<br />
+            Me mueve la idea de crecer, inspirar y construir<br />
+            una vida auténtica, donde la disciplina<br />
+            y el amor por lo que hago se encuentran<br />
+            con mis sueños.
+          </p>
+
+          <p
+            class="text-sm font-semibold tracking-widest mt-6 text-gray-700 leading-relaxed"
+          >
+            A c o m p a ñ a r &nbsp; a &nbsp; o t r o s &nbsp; a &nbsp;c r e e r
+            &nbsp; e n &nbsp; s u &nbsp; p r o p i o &nbsp; p o t e n c i a l
+          </p>
+        </div>
+
+        <!-- Imagen circular -->
+        <img
+          src="foto12.png"
+          alt="Imagen circular"
+          class="w-40 sm:w-56 h-40 sm:h-56 object-cover rounded-full img-hover"
+        />
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto px-6 pb-12">
+      <div class="text-center text-sm text-[color:var(--muted)]">
+        © <span id="year"></span> Amelilozvel — Hecho con cariño
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      // Año dinámico
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Menú móvil
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

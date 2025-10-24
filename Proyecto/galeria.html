@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Galería — Amelilozvel</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fuente Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --bg-cream: #f6f0e8;
+        --pill: #efe9e2;
+        --muted: #8b7f75;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background: var(--bg-cream);
+      }
+
+      .img-hover {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      }
+
+      .img-hover:hover {
+        transform: scale(1.05);
+        filter: brightness(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased text-gray-900">
+    <!-- Header -->
+    <header class="w-full flex justify-center py-6">
+      <div class="w-full max-w-5xl px-4">
+        <div
+          class="bg-[color:var(--pill)] rounded-full px-6 py-3 flex items-center justify-between shadow-sm ring-1 ring-black/5"
+        >
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-3">
+            <img src="logo.png" alt="logo" class="w-10 h-10 object-contain" />
+          </a>
+
+          <!-- Botón hamburguesa -->
+          <button
+            id="menu-btn"
+            class="md:hidden text-gray-700 focus:outline-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+
+          <!-- Menú de navegación -->
+          <nav
+            id="menu"
+            class="hidden md:flex flex-col md:flex-row absolute md:static top-20 left-0 w-full md:w-auto bg-[color:var(--pill)] md:bg-transparent shadow-md md:shadow-none rounded-xl md:rounded-none p-5 md:p-0 gap-4 md:gap-8 items-center text-sm font-medium text-[color:var(--black)] z-50"
+          >
+            <a
+              href="index.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Inicio</a
+            >
+            <a
+              href="conoceme.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Conóceme más</a
+            >
+            <a
+              href="proposito.html"
+              class="px-3 py-1 hover:text-[color:var(--muted)]"
+              >Mi propósito</a
+            >
+            <a
+              href="galeria.html"
+              class="px-3 py-1 text-[color:var(--muted)] font-semibold"
+              >Galería</a
+            >
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Galería -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-20">
+      <section>
+        <!-- Cuadrícula de imágenes -->
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6"
+        >
+          <!-- Cada imagen -->
+          <img
+            src="foto1.png"
+            alt="Imagen 1"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto2.png"
+            alt="Imagen 2"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto3.png"
+            alt="Imagen 3"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto4.png"
+            alt="Imagen 4"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto5.png"
+            alt="Imagen 5"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto6.png"
+            alt="Imagen 6"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto7.png"
+            alt="Imagen 7"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto8.png"
+            alt="Imagen 8"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto9.png"
+            alt="Imagen 9"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+          <img
+            src="foto10.png"
+            alt="Imagen 10"
+            class="rounded-3xl w-full h-48 sm:h-56 md:h-64 object-cover shadow-md img-hover cursor-pointer"
+          />
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50"
+    >
+      <img
+        id="lightbox-img"
+        src=""
+        alt="Imagen ampliada"
+        class="max-w-[90%] max-h-[85vh] rounded-2xl shadow-2xl transition-all"
+      />
+      <button
+        id="close-lightbox"
+        class="absolute top-6 right-6 text-white text-3xl font-bold"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-5xl mx-auto px-6 pb-12">
+      <div class="text-center text-sm text-[color:var(--muted)]">
+        © <span id="year"></span> Amelilozvel — Hecho con cariño
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      // Año automático
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Menú móvil
+      const menuBtn = document.getElementById("menu-btn");
+      const menu = document.getElementById("menu");
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+
+      // Lightbox
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const closeBtn = document.getElementById("close-lightbox");
+
+      document.querySelectorAll("main img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.remove("hidden");
+          lightbox.classList.add("flex");
+        });
+      });
+
+      closeBtn.addEventListener("click", () => {
+        lightbox.classList.add("hidden");
+      });
+
+      lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
